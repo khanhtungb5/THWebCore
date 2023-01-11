@@ -1,0 +1,100 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.active{
+    border-bottom:1px solid red;
+}
+    .active a {
+        color: red;
+        font-weight: bold;
+    }
+.container h3{
+    font-weight:bold;
+    text-align:center;
+    margin:50px 0px 50px 0px;
+}
+.row{
+    margin:0px 30px;
+}
+.item {
+    width: 200px;
+    heigth: 280px;
+    padding: 5px;
+}
+    .item a {
+        width: auto;
+        height: auto;
+        text-decoration:none;
+    }
+        .item a:hover .item-tile {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+.item-tile {
+    border: 1px solid gray;
+    border-color: #DEDEDE;
+    padding:5px;
+}
+.item-img {
+    width: 100%;
+    height: 188px;
+    object-fit:contain;
+}
+
+
+    .item-img-container{
+        
+    }
+.item-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+    .item-name-container{
+        height:50px;
+
+    }
+.item-price {
+    color: red;
+    text-align: start;
+    overflow: hidden;
+}
+.item-cate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    color: #808080;
+    text-align: end;
+}
+.item-price-container{
+    display: inline-block;
+    height: 30px;
+    width: 60%;
+    text-align: start;
+}
+.item-cate-container {
+    display: inline-block;
+    height: 20px;
+    width: 37%;
+    text-align: end;
+}
+
+    

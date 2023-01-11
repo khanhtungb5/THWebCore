@@ -1,0 +1,34 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+	string PriceForm(int price)
+	{
+		
+		string result = price.ToString("N0");
+		
+		return result;
+	}
+}
+
+@model ProductViewModel
+<div class="container">
+	<h3>Danh Sách Sản Phẩm</h3>
+<div class="list">
+<div class="row">
+	@foreach (var pro in Model.Products)
+	{
+		<div class="item col-2">
+			<a href="#">
+			<div class="item-tile">
+				<div class="item-img-container"><img src="@pro.AvatarUrl" class="item-img" style="" /></div>
+				<div class="item-name-container"><h6 class="item-name" style="">@pro.Name</h6></div>
+				<div class="item-bottom">
+				<div class="item-price-container"><h5 class="item-price">@PriceForm(@pro.Price) đ</h5></div>
+				<div class="item-cate-container"><h6 class="item-cate">@pro.CategoryName</h6></div>
+				</div>
+			</div>
+			</a>
+		</div>
+	}
+</div>
+</div>
+</div>

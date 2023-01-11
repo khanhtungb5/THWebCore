@@ -1,0 +1,9 @@
+﻿@model CategoryViewModel
+<h2>Bạn có chắc muốn xoá @(Model.CategoryResponse.Name)?</h2>
+<div>
+	<form asp-action="Delete" method="post">
+		<input type="hidden" value="@Model.CategoryResponse.Id" name="CategoryResponse.Id" />
+		<button class="btn btn-primary" type="submit">Đồng ý</button>
+		<a class="btn btn-secondary" asp-controller="Category" asp-action="Index">Bỏ qua</a>
+	</form>
+</div>
