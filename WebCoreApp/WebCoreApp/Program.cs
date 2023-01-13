@@ -17,6 +17,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICategoryService,CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICartService, CartService>();
+
 /*builder.Services.AddTransient<ICategoryService,CategoryService>();*/
 //builder.Services.AddSingleton<ICategoryService, CategoryService>();
 var app = builder.Build();

@@ -3,12 +3,12 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Hình Ảnh</th>
-            <th>Tên Sản Phẩm</th>
-            <th>Mô Tả Sản Phẩm</th>
-            <th>Giá</th>
-            <th>Thời Gian Tạo</th>
-            <th>Tên Danh Mục</th>
+            <th>Hinh Anh</th>
+            <th>Ten San Pham</th>
+            <th>Mo Ta San Pham</th>
+            <th>Gia</th>
+            <th>Thoi Gian Tao</th>
+            <th>Ten Danh Muc</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -42,27 +42,27 @@
                                     <div class="modal-body">
                                         <input type="hidden" id="id" name="ProductRequest.Id" value="@pro.Id" />
                                         <div>
-                                            <label class="form-label" for="name">Tên Sản Phẩm</label>
+                                            <label class="form-label" for="name">Ten San Pham</label>
                                             <input class="form-control" type="text" id="name" asp-for="ProductRequest.Name" value="@pro.Name" required />
                                         </div>
                                         <div>
-                                            <label class="form-label" for="description">Mô Tả Sản Phẩm</label>
+                                            <label class="form-label" for="description">Mo ta San Pham</label>
                                             <textarea style="width:100%" class="form-control" type="text" id="description" name="ProductRequest.Description">@pro.Description</textarea>
                                         </div>
                                         <div>
-                                            <label class="form-label" for="datecreated">Thời Gian Tạo</label>
+                                            <label class="form-label" for="datecreated">Thoi Gian Tao</label>
                                             <input class="form-control" type="text" id="price" asp-for="ProductRequest.DateCreated" value="@pro.DateCreated" disabled />
                                         </div>
                                         <div>
-                                            <label class="form-label" for="price">Giá Sản Phẩm</label>
+                                            <label class="form-label" for="price">Gia San Pham</label>
                                             <input class="form-control" type="number" id="price" asp-for="ProductRequest.Price" value="@pro.Price" required />
                                         </div>
                                         <div>
-                                            <label class="form-label" for="avatar">Hình Ảnh</label>
+                                            <label class="form-label" for="avatar">Avatar</label>
                                             <input type="file" accept="image/*" asp-for="ProductRequest.Avatar"/>
                                         </div>
                                         <div>
-                                            <label class="form-label" for="categoryid">Danh Mục</label>
+                                            <label class="form-label" for="categoryid">Danh Muc</label>
                                             <select class="select-category js-states form-control" asp-for="ProductRequest.CategoryId">
                                                 @foreach (var cat in @Model.Responses)
                                                 {
@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-success">Lưu</button>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </form>
                             </div>
@@ -104,7 +104,7 @@
                                     <form asp-action="Delete" asp-controller="Product" method="post">
                                         <input type="hidden" value="@pro.Id" name="ProductRequest.Id" />
                                         <button type="submit" class="btn btn-success">Đồng ý</button>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </form>
                                 </div>
 

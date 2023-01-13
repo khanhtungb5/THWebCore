@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+
 </head>
 <body>
     @{
@@ -41,6 +44,9 @@
                          <li class="nav-item @(checkActive("Product","Index"))">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Product List</a>
                         </li>
+                        <li class="nav-item @(checkActive("Cart","Index"))">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+                        </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -55,8 +61,27 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-           <h5>Lê Văn Khánh Tùng - CNTT A - K18</h5>
+        <div class="footer">
+            <div class="row2">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+
+            <div class="row2">
+                <ul>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="row2">
+                 Copyright © 2021 Inferno - All rights reserved || 
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

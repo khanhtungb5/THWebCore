@@ -59,7 +59,7 @@ namespace WebCoreApp.Services
                 return string.Empty;
             } else
             {
-                return "Không tìm thấy đối tượng";
+                return "Khong tim thay doi tuong";
             }
         }
     }

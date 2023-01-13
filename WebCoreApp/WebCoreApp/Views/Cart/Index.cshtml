@@ -1,0 +1,65 @@
+﻿@model CartViewModel
+<table class="table table-bordered my-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Hinh Anh</th>
+            <th>Ten San Pham</th>
+            <th>So luong San Pham</th>
+            <th>Gia</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var citem
+        in @Model.CartResponses)
+        {
+            if(citem.CartStatusId==1){
+            <tr>
+                <td>@citem.CartId</td>
+                <td><img src="@citem.ProductAvatar" style="width:80px"/></td>
+                <td>@citem.ProductName</td>
+                <td>@citem.Amount</td>
+                <td>
+                    <button class="btn"></button>
+                    @citem.TotalPrice
+                    <button class="btn"></button>
+                </td>
+                <td>
+                    <form asp-action="IncreaseProduct" asp-controller="Cart" method="post">
+                        <input type="hidden" id="productId" value="@citem.ProductId" name="productId" />
+                        <button type="submit" class="btn btn-success">
+                        Them
+                        </button>
+                    </form>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalDel_@citem.CartId">
+                        Xóa
+                    </button>
+                    <div class="modal fade" id="ModalDel_@citem.CartId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thông báo</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h3>  Bạn có chắc chắn muốn xóa @citem.ProductName khoi gio hang?</h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <form asp-action="RemoveProduct" asp-controller="Cart" method="post">
+                                        <input type="hidden" id="productId" value="@citem.ProductId" name="productId" />
+                                        <button type="submit" class="btn btn-success">Đồng ý</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                </tr>
+        }}
+        </tbody>
+        </table>

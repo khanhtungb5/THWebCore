@@ -224,6 +224,36 @@ namespace WebCoreApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("WebCoreApp.Data.CartItem", b =>
+                {
+                    b.Property<int>("CartId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartId"), 1L, 1);
+
+                    b.Property<DateTime?>("AddedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CartStatusId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartItems");
+                });
+
             modelBuilder.Entity("WebCoreApp.Data.Category", b =>
                 {
                     b.Property<int>("ID")
@@ -258,6 +288,9 @@ namespace WebCoreApp.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateUpdated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -327,6 +360,17 @@ namespace WebCoreApp.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WebCoreApp.Data.CartItem", b =>
+                {
+                    b.HasOne("WebCoreApp.Data.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("WebCoreApp.Data.Product", b =>

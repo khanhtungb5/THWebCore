@@ -7,8 +7,8 @@ namespace WebCoreApp.Data
     {
         public DbSet<Category> Category { get; set; }
         public DbSet<Product> Product { get; set; }
-
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+		public DbSet<CartItem> CartItems { get; set; }
+		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }

@@ -38,7 +38,7 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Tên Phân Loại</th>
+            <th>Ten Phan Loai</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -66,13 +66,13 @@
                                 </div>
                                 <div class="modal-body">
                                     <input type="hidden" id="id" name="CategoryResponse.Id" value="@cat.Id" />
-                                    <label class="form-label" for="name">Tên Danh Mục</label>
+                                    <label class="form-label" for="name">Ten Danh Muc</label>
                                     <input class="form-control" type="text" id="name" name="CategoryResponse.Name" value="@cat.Name" required />
 
                                 </div>
                                 <div class="modal-footer">
                                         <button type="submit" class="btn btn-success">Lưu</button>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                                 </form>
                             </div>
@@ -98,7 +98,7 @@
                                     <form asp-action="Delete" method="post">
                                         <input type="hidden" value="@cat.Id" name="CategoryResponse.Id" />
                                         <button type="submit" class="btn btn-success">Đồng ý</button>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </form>
                                 </div>
                                 

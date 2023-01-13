@@ -9,8 +9,7 @@ namespace WebCoreApp.Controllers
     {
        /* private readonly ILogger<HomeController> _logger;*/
         private readonly IProductService _productService;
-        
-        public HomeController(/*ILogger<HomeController> logger,*/IProductService productService )
+        public HomeController(/*ILogger<HomeController> logger,*/IProductService productService)
         {
             //_logger = logger;
             _productService = productService;

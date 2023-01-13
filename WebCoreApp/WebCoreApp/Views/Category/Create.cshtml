@@ -1,5 +1,5 @@
 ﻿@model CategoryViewModel
-<h1>Thêm Danh Mục</h1>
+<h1>Them danh muc</h1>
 <p class="text-danger">
 	@{
 		var message=ViewBag.Message;
@@ -9,12 +9,12 @@
 <div>
 	<form asp-action="Create" method="post" >
 		<div>
-		<label class="form-label" for="name">Tên Danh Mục</label>
+		<label class="form-label" for="name">Ten Danh Muc</label>
 		<input class="form-control" type="text" id="name" name="CategoryResponse.Name" required/>
 		</div>
 		<div>
-			<button class="btn btn-primary" type="submit" >Thêm mới</button>
-			<a class="btn btn-secondary" asp-action="Index">Quay lại</a>
+			<button class="btn btn-primary" type="submit" >Them moi</button>
+			<a class="btn btn-secondary" asp-action="Index">Quay lai</a>
 		</div>
 	</form>
 </div>

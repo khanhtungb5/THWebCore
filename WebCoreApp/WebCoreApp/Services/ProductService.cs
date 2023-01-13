@@ -66,16 +66,23 @@ namespace WebCoreApp.Services
             }).ToList();
             return rs;
         }
-        public string Delete(int id)
-        {
-            var obj = _db.Product.Where(e => e.Id == id).FirstOrDefault();
-            if (obj != null)
-            {
-                _db.Product.Remove(obj);
-                _db.SaveChanges();
-            }
-            return String.Empty;
-        }
+		public string Create(ProductRequest pr)
+		{
+			var obj = new Product
+			{
+				Name = pr.Name,
+				Description = pr.Description,
+				Price = pr.Price,
+				DateCreated = DateTime.Now,
+				CategoryId = pr.CategoryId,
+				AvatarUrl = pr.AvatarUrl
+			};
+			_db.Product.Add(obj);
+			_db.SaveChanges();
+			return String.Empty;
+
+		}
+		
         public string Update(ProductRequest pr)
         {
             var obj = _db.Product.Where(e => e.Id == pr.Id).FirstOrDefault();
@@ -99,22 +106,16 @@ namespace WebCoreApp.Services
                 return "Khong tim thay doi tuong";
             }
         }
-        public string Create(ProductRequest pr)
-        {
-            var obj = new Product
-            {
-                Name = pr.Name,
-                Description = pr.Description,
-                Price = pr.Price,
-                DateCreated = DateTime.Now,
-                CategoryId = pr.CategoryId,
-                AvatarUrl=pr.AvatarUrl
-            };
-                _db.Product.Add(obj);
-                _db.SaveChanges();
-                return String.Empty;
-            
-        }
-        
-    }
+
+		public string Delete(int id)
+		{
+			var obj = _db.Product.Where(e => e.Id == id).FirstOrDefault();
+			if (obj != null)
+			{
+				_db.Product.Remove(obj);
+				_db.SaveChanges();
+			}
+			return String.Empty;
+		}
+	}
 }
